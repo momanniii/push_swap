@@ -6,31 +6,11 @@
 /*   By: abalmoma <abalmoma@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 13:13:31 by abalmoma          #+#    #+#             */
-/*   Updated: 2026/11/14 21:26:58 by wgharaib         ###   ########.fr       */
+/*   Updated: 2026/11/23 21:55:25 by wgharaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_Swap.h"
-
-int	*arr(t_list *a)
-{
-	int				*values;
-	unsigned int	size;
-	int				i;
-
-	size = ft_lstsize(a);
-	values = malloc(sizeof(int) * size);
-	if (!values)
-		return (NULL);
-	i = 0;
-	while (a)
-	{
-		values[i] = a->content;
-		i++;
-		a = a->next;
-	}
-	return (values);
-}
 
 void	node_back(t_list **head, t_list *new_node)
 {

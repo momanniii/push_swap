@@ -6,7 +6,7 @@
 
 **Push_swap** is an algorithm project: sort a list of integers using two stacks (`a` and `b`) and a very limited set of operations, while printing the **smallest possible list of operations** on the standard output.
 
-At the start, stack `a` holds the integers given as arguments (no duplicates, first argument on top) and stack `b` is empty. The goal is to finish with `a` sorted in ascending order (smallest number on top) and `b` empty.
+At the start, stack `a` holds the integers given as arguments (no duplicates, first argument on top) and stack `b` is empty. The goal is to finish with `a` sorted in ascending order (smallest number on top) and `b` is empty.
 
 The real goal of the project is to experience **algorithmic complexity**: the cost of an algorithm is measured in the **number of Push_swap operations it generates**, not in CPU time. This project therefore embeds four strategies in a single binary:
 
@@ -258,4 +258,4 @@ We used an AI assistant (Claude, by Anthropic) as a helper, not as a replacement
 - **Testing:** a Python test script (random inputs, every strategy, error cases, `--bench` consistency) and an AddressSanitizer run to look for leaks. These scripts are not submitted
 - **Documentation:** a first draft of this README, which we reviewed and corrected.
 
-Every suggestion was tested against the examples of the subject and against our own tests before we kept it, and both of us can explain the code.
+Every suggestion was tested against the examples of the subject and against our own tests before we kept it.

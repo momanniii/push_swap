@@ -6,7 +6,7 @@
 /*   By: wgharaib <wgharaib@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 18:36:54 by wgharaib          #+#    #+#             */
-/*   Updated: 2026/11/15 16:48:14 by wgharaib         ###   ########.fr       */
+/*   Updated: 2026/11/23 21:43:57 by wgharaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@ void	ft_run_strategy(t_list **a, t_list **b, int strategy)
 	if (strategy == STRATEGY_SIMPLE)
 		ft_selection_sort(a, b);
 	else if (strategy == STRATEGY_MEDIUM)
+	{
+		assign_index(*a);
 		ft_chunked_sort(a, b);
+	}
 	else
+	{
+		assign_index(*a);
 		radix_sort(a, b);
+	}
 }

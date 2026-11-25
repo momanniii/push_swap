@@ -6,7 +6,7 @@
 /*   By: wgharaib <wgharaib@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 19:37:44 by wgharaib          #+#    #+#             */
-/*   Updated: 2026/11/15 16:48:44 by wgharaib         ###   ########.fr       */
+/*   Updated: 2026/11/23 22:36:50 by wgharaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@
 # define STRATEGY_MEDIUM 2
 # define STRATEGY_COMPLEX 3
 
-typedef struct s_merge_state
-{
-	int	i;
-	int	j;
-	int	k;
-	int	mid;
-}		t_merge_state;
-
 typedef struct s_flags
 {
 	int	strategy;
@@ -40,11 +32,6 @@ typedef struct s_flags
 float	ft_disorder(t_list **stack);
 
 int		extract_simple_flags(int argc, char **argv, t_flags *flags);
-int		count_chunk(t_list *stack, int start, int end);
-int		*arr(t_list *a);
-int		binary_search(int *sorted, int size, int value);
-int		normalize_stack(t_list *a);
-int		sort_large(t_list **a, t_list **b);
 int		do_swap(t_list **stack);
 int		do_rotate(t_list **stack);
 int		do_reverse_rotate(t_list **stack);
@@ -61,8 +48,7 @@ void	process_numbers(char **split, t_list **stack_a);
 void	ft_adaptive(t_list **stack_a, t_list **stack_b);
 void	freesplit(char **splitarr);
 void	parse_input(int argc, char **argv, int i, t_list **stack_a);
-void	merge_sort(int *array, int *temp, int left, int right);
-void	assign_index(t_list *a, int *sorted, int size);
+void	assign_index(t_list *stack);
 void	radix_sort(t_list **a, t_list **b);
 void	ft_chunked_sort(t_list **stack_a, t_list **stack_b);
 void	ft_selection_sort(t_list **stack_a, t_list **stack_b);
@@ -82,6 +68,5 @@ void	ft_rotate_b(t_list **stack_b);
 void	ft_swap_a_and_b(t_list **stack_a, t_list **stack_b);
 void	ft_swap_a(t_list **stack_a);
 void	ft_swap_b(t_list **stack_b);
-void	ft_selection_sort(t_list **stack_a, t_list **stack_b);
 
 #endif

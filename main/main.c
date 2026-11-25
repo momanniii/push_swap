@@ -6,7 +6,7 @@
 /*   By: abalmoma <abalmoma@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 13:10:46 by abalmoma          #+#    #+#             */
-/*   Updated: 2026/11/15 17:07:11 by wgharaib         ###   ########.fr       */
+/*   Updated: 2026/11/23 21:55:12 by wgharaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,6 @@ int	main(int argc, char **argv)
 			return (write(2, "Error\n", 6), 1);
 		parse_input(argc, argv, i, &stack_a);
 		check_duplicates(&stack_a);
-		if (!normalize_stack(stack_a))
-			return (free_stack(&stack_a), 1);
 		sort_and_report(&stack_a, &stack_b, &flags);
 		free_stack(&stack_a);
 		free_stack(&stack_b);

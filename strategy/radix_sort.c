@@ -6,7 +6,7 @@
 /*   By: wgharaib <wgharaib@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 23:02:37 by wgharaib          #+#    #+#             */
-/*   Updated: 2026/11/09 11:28:09 by wgharaib         ###   ########.fr       */
+/*   Updated: 2026/11/23 22:35:06 by wgharaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,4 @@ void	radix_sort(t_list **a, t_list **b)
 		radix_pass(a, b, bit);
 		bit++;
 	}
-}
-
-int	sort_large(t_list **a, t_list **b)
-{
-	if (!a || !b)
-		return (0);
-	if (!normalize_stack(*a))
-		return (0);
-	radix_sort(a, b);
-	return (1);
 }

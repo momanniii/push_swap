@@ -6,7 +6,7 @@
 /*   By: wgharaib <wgharaib@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 21:48:49 by wgharaib          #+#    #+#             */
-/*   Updated: 2026/11/04 19:28:42 by wgharaib         ###   ########.fr       */
+/*   Updated: 2026/11/25 17:40:23 by wgharaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_chunked_sort(t_list **stack_a, t_list **stack_b)
 	int	size;
 	int	chunk;
 
-	chunk = ft_sqrt(ft_lstsize(*stack_a)) * 3 / 2;
+	chunk = ft_sqrt(ft_lstsize(*stack_a));
 	if (chunk < 1)
 		chunk = 1;
 	push_chunks(stack_a, stack_b, chunk);

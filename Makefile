@@ -25,8 +25,7 @@ SRCS = main/main.c \
 		  strategy/ft_disorder.c \
 		  main/utils.c \
 		  main/utils2.c \
-		  strategy/index_normalization.c \
-		  strategy/merge_sort.c \
+		  strategy/indexes.c \
 		  strategy/radix_sort.c \
 		  strategy/ft_adaptive_strategy.c \
 		  main/ft_parsing.c \

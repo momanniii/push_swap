@@ -5,12 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wgharaib <wgharaib@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/15 18:38:21 by wgharaib          #+#    #+#             */
-/*   Updated: 2026/11/15 17:07:03 by wgharaib         ###   ########.fr       */
+/*   Created: 2026/11/25 18:04:19 by wgharaib          #+#    #+#             */
+/*   Updated: 2026/11/25 18:17:56 by wgharaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Push_Swap.h"
+
+static	void	sort_three(t_list **a)
+{
+	int	x;
+	int	y;
+	int	z;
+
+	x = (*a)->content;
+	y = (*a)->next->content;
+	z = (*a)->next->next->content;
+	if (x > y && y > z)
+	{
+		ft_swap_a(a);
+		ft_reverse_rotate_a(a);
+	}
+	else if (x > y && x > z)
+		ft_rotate_a(a);
+	else if (x > y)
+		ft_swap_a(a);
+	else if (y > z && x > z)
+		ft_reverse_rotate_a(a);
+	else if (y > z)
+	{
+		ft_swap_a(a);
+		ft_rotate_a(a);
+	}
+}
 
 static t_list	*find_min(t_list *stack_a)
 {
@@ -64,10 +91,17 @@ static void	bring_to_top(t_list **stack_a, t_list *min)
 
 void	ft_selection_sort(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*min;
+	t_list			*min;
+	unsigned int	size;
 
+	size = ft_lstsize(*stack_a);
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
+	if (size == 3)
+	{
+		sort_three(stack_a);
+		return ;
+	}
 	while (*stack_a)
 	{
 		min = find_min(*stack_a);
